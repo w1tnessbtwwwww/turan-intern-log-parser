@@ -12,7 +12,9 @@ RUN pip install poetry==1.8.2
 
 # Создаем директории для проекта
 WORKDIR /app/notificator
-
+RUN mkdir logs
+RUN touch logs/laravel.log
+RUN echo "test" >> logs/laravel.log
 # Копируем pyproject.toml и poetry.lock
 COPY pyproject.toml poetry.lock /app/notificator/
 
@@ -21,6 +23,7 @@ RUN poetry config virtualenvs.create false
 
 # Устанавливаем зависимости
 RUN poetry install --only main
+
 
 # Очищаем кэш
 RUN apt-get purge -y && rm -rf /var/lib/apt/lists/*

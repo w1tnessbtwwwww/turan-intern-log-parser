@@ -15,8 +15,8 @@ def send_message_to_telegram(message):
 def process_log_file(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
-        if (len(lines) % 174 == 0):
-            send_message_to_telegram(lines[-1])
+        if (len(lines) % 1 == 0):
+            send_message_to_telegram(f"В проекте ERP произошла 500 ошибка!\n Лог: ```\n{lines[-1]}```")
 
 if __name__ == "__main__":
-    process_log_file(LOG_FILE_PATH)
+   process_log_file(LOG_FILE_PATH)

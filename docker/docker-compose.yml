@@ -6,3 +6,6 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     command: ["poetry", "run", "python", "main.py"]
+
+    volumes:
+    - /var/www/stager2_tura_usr/data/www/stager2.turan-soft.ru/storage/logs:/logs

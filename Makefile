@@ -1,2 +1,2 @@
 dev:
-	docker-compose -f ./docker/docker-compose.yml --project-directory . up --build
+	docker compose -f ./docker/docker-compose.yml --project-directory . up --build
