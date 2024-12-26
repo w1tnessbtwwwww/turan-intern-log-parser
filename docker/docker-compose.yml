@@ -1,0 +1,8 @@
+
+services:
+  notificator:
+    container_name: "notificator"
+    build: 
+      context: .
+      dockerfile: docker/Dockerfile
+    command: ["poetry", "run", "python", "main.py"]
